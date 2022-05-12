@@ -17,6 +17,7 @@
 		7C744E20282BBEBE005FD2A9 /* KillerWhale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E1F282BBEBE005FD2A9 /* KillerWhale.swift */; };
 		7C744E22282BC9D1005FD2A9 /* SeaCreaturesGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E21282BC9D1005FD2A9 /* SeaCreaturesGame.swift */; };
 		7C744E24282BD04D005FD2A9 /* SeaCreaturesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */; };
+		7C744E26282D1B59005FD2A9 /* SeaCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E25282D1B58005FD2A9 /* SeaCreature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7C744E1F282BBEBE005FD2A9 /* KillerWhale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillerWhale.swift; sourceTree = "<group>"; };
 		7C744E21282BC9D1005FD2A9 /* SeaCreaturesGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesGame.swift; sourceTree = "<group>"; };
 		7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesProtocol.swift; sourceTree = "<group>"; };
+		7C744E25282D1B58005FD2A9 /* SeaCreature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */,
 				7C744E1D282BBE7A005FD2A9 /* Penguin.swift */,
 				7C744E1F282BBEBE005FD2A9 /* KillerWhale.swift */,
+				7C744E25282D1B58005FD2A9 /* SeaCreature.swift */,
 				7C744E19282BB755005FD2A9 /* Application */,
 				7C744E1A282BB793005FD2A9 /* Resources */,
 			);
@@ -169,6 +172,7 @@
 				7C744E04282BB6C9005FD2A9 /* AppDelegate.swift in Sources */,
 				7C744E1E282BBE7A005FD2A9 /* Penguin.swift in Sources */,
 				7C744E1C282BBDBA005FD2A9 /* CollectionOfSeaCreatures.swift in Sources */,
+				7C744E26282D1B59005FD2A9 /* SeaCreature.swift in Sources */,
 				7C744E18282BB708005FD2A9 /* SeaCreaturesViewController.swift in Sources */,
 				7C744E20282BBEBE005FD2A9 /* KillerWhale.swift in Sources */,
 				7C744E24282BD04D005FD2A9 /* SeaCreaturesProtocol.swift in Sources */,

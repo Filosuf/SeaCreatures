@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol SeaCreaturesProtocol {
+protocol SeaCreaturesProtocol: AnyObject {
+
+    var name: String { get }
 
     func stepInGame(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?])
 }

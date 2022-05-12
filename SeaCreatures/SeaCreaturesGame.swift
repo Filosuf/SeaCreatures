@@ -13,7 +13,7 @@ final class SeaCreaturesGame {
     let widthOfThePlayingField = 4 //10  Minimum: 3
     lazy var sizeOfThePlayingField = heightOfThePlayingField * widthOfThePlayingField
 
-    let percentageOfPenguins = 50
+    let percentageOfPenguins = 10
     let percentageOfKillerWhale = 10 //5
 
     var numberOfPenguins: Int {

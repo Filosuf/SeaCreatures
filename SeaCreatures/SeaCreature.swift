@@ -1,26 +1,34 @@
 //
-//  Penguin.swift
+//  SeaCreature.swift
 //  SeaCreatures
 //
-//  Created by 1234 on 11.05.2022.
+//  Created by 1234 on 12.05.2022.
 //
 
 import Foundation
 
-final class Penguin: SeaCreature, SeaCreaturesProtocol {
+class SeaCreature: SeaCreaturesProtocol {
 
-    override init(name: String, periodOfBirths: Int, age: Int = 0) {
-        self.name = "Penguin"
-        self.periodOfBirths = 3
-        self.age = 0
+    var name = "SeaCreature"
+    var age: Int
+    var periodOfBirths: Int
+
+    init(name: String, periodOfBirths: Int, age: Int = 0) {
+        self.name = name
+        self.periodOfBirths = periodOfBirths
+        self.age = age
     }
 
+//    func stepInGame(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
+//        growth()
+//        move(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
+//        reproduction(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
+//    }
+//
     func stepInGame(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
-        growth()
-        move(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
-        reproduction(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
-    }
 
+    }
+    
     func growth() {
         age += 1
     }
@@ -34,7 +42,7 @@ final class Penguin: SeaCreature, SeaCreaturesProtocol {
         }
     }
 
-    func reproduction(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
+    func reproduction(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?], newSeaCreature: SeaCreature) {
         var indexEmptyCellsAround = [Int]()
 
         //проверка возраста морского обитателя
@@ -47,7 +55,8 @@ final class Penguin: SeaCreature, SeaCreaturesProtocol {
         }
         //Создание нового морского обитателя если есть свободная ячейка
         if let index = indexEmptyCellsAround.randomElement() {
-            playingField[index] = Penguin()
+            playingField[index] = newSeaCreature
         }
     }
+
 }
