@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SeaCreature: SeaCreaturesProtocol {
+class SeaCreature {
 
     var name = "SeaCreature"
     var age: Int
@@ -18,31 +18,26 @@ class SeaCreature: SeaCreaturesProtocol {
         self.periodOfBirths = periodOfBirths
         self.age = age
     }
-
-//    func stepInGame(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
-//        growth()
-//        move(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
-//        reproduction(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
-//    }
-//
-    func stepInGame(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
-
-    }
     
-    func growth() {
+    func growth(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreature?], newSeaCreature: SeaCreature = SeaCreature(name: "", periodOfBirths: 0)) {
         age += 1
+        reproduction(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField, newSeaCreature: newSeaCreature)
     }
 
-    func move(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?]) {
+    func move(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreature?]) -> Int {
         if let index = indexCellsAround.randomElement() {
             if playingField[index] == nil {
                 playingField[index] = playingField[seaCreaturesIndex]
                 playingField[seaCreaturesIndex] = nil
+                print("\(name) index = \(seaCreaturesIndex) move to index = \(index)")
+                return index
             }
         }
+        print("\(name) index = \(seaCreaturesIndex) dont move")
+        return seaCreaturesIndex
     }
 
-    func reproduction(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreaturesProtocol?], newSeaCreature: SeaCreature) {
+    func reproduction(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreature?], newSeaCreature: SeaCreature) {
         var indexEmptyCellsAround = [Int]()
 
         //проверка возраста морского обитателя
@@ -56,6 +51,7 @@ class SeaCreature: SeaCreaturesProtocol {
         //Создание нового морского обитателя если есть свободная ячейка
         if let index = indexEmptyCellsAround.randomElement() {
             playingField[index] = newSeaCreature
+            print("The birth of \(name), index = \(index)")
         }
     }
 

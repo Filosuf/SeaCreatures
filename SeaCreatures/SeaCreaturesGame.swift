@@ -23,7 +23,7 @@ final class SeaCreaturesGame {
         heightOfThePlayingField * heightOfThePlayingField * percentageOfKillerWhale / 100
     }
 
-    var seaCreaturesArray = [SeaCreaturesProtocol?]()
+    var seaCreaturesArray = [SeaCreature?]()
 
     let penguin = Penguin()
     let killerWhale = KillerWhale()
@@ -55,9 +55,16 @@ final class SeaCreaturesGame {
     }
 
     func makeOneMove() {
+        //масив координат ячеек уже сходивших на этом ходу
+        var busyCellsArray = [Int]()
+
         for (index, seaCreature) in seaCreaturesArray.enumerated() {
             if let seaCreature = seaCreature {
-                seaCreature.stepInGame(seaCreaturesIndex: index, indexCellsAround: creatingIndexCellsAround(index: index), playingField: &seaCreaturesArray)
+                if busyCellsArray.firstIndex(of: index) == nil {
+                    let newIndex = seaCreature.move(seaCreaturesIndex: index, indexCellsAround: creatingIndexCellsAround(index: index), playingField: &seaCreaturesArray)
+                    busyCellsArray.append(newIndex)
+                    seaCreature.growth(seaCreaturesIndex: newIndex, indexCellsAround: creatingIndexCellsAround(index: newIndex), playingField: &seaCreaturesArray)
+                }
             }
         }
 
