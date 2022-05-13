@@ -10,38 +10,39 @@ import UIKit
 class SeaCreaturesViewController: UIViewController {
 
     let game = SeaCreaturesGame()
+    let seaCreaturesView = SeaCreaturesView()
     let ocean = " ocean  "
-    
-    lazy var seaCreaturesArray = game.seaCreaturesArray
-
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemGray3
-        collectionView.register(SeaCreaturesCollectionViewCell.self, forCellWithReuseIdentifier: SeaCreaturesCollectionViewCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        return collectionView
-    }()
 
     override func viewDidLoad() {
         game.startGame()
         super.viewDidLoad()
         view.backgroundColor = .white
+        setView()
         layout()
     }
 
+    private func setView() {
+        seaCreaturesView.collectionView.delegate = self
+        seaCreaturesView.collectionView.dataSource = self
+        seaCreaturesView.newGameButton.addTarget(self, action: #selector(newGameButtonPressed), for: .touchUpInside)
+    }
+
+    @objc private func newGameButtonPressed() {
+        game.startGame()
+        seaCreaturesView.collectionView.reloadData()
+    }
+
     private func layout() {
-        view.addSubview(collectionView)
+        seaCreaturesView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(seaCreaturesView)
 
         NSLayoutConstraint.activate([
 
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200)
+            seaCreaturesView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            seaCreaturesView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            seaCreaturesView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            seaCreaturesView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

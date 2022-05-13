@@ -35,6 +35,7 @@ final class SeaCreaturesGame {
     var busyCellsArray = [Int]()
 
     func startGame() {
+        seaCreaturesArray = []
         //Создание массива с индесами игрового поля
         var playingFieldArray = [Int]()
         for index in 0..<sizeOfThePlayingField {
