@@ -7,18 +7,18 @@
 
 import Foundation
 
-final class KillerWhale: SeaCreature {
+final class Orca: SeaCreature {
 
     var hunger = 0
 
     let ocean = " ocean  "
 
-    override init(name: String = Constants().nameKillerWhale, periodOfBirths: Int = Constants().periodOfBirthsKillerWhale, age: Int = 0) {
+    override init(name: String = Constants().nameOrca, periodOfBirths: Int = Constants().periodOfBirthsOrca, age: Int = 0) {
         super.init(name: name, periodOfBirths: periodOfBirths, age: 0)
     }
 
     override func growth(seaCreaturesIndex: Int, indexCellsAround: [Int], playingField: inout [SeaCreature?], newSeaCreature: SeaCreature) {
-        super.growth(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField, newSeaCreature: KillerWhale())
+        super.growth(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField, newSeaCreature: Orca())
         toDie(seaCreaturesIndex: seaCreaturesIndex, playingField: &playingField)
     }
 
@@ -34,24 +34,17 @@ final class KillerWhale: SeaCreature {
         if let index = indexPenguinCellsArray.randomElement() {
             playingField[index] = nil //съедаем пингвина
             hunger = 0
-            print("\(name) index = \(seaCreaturesIndex) eating penguin in index = \(index)")
-//            print("after hunting")
-//            for index in stride(from: 0, to: 16, by: 4) {
-//                print(playingField[0 + index]?.name ?? ocean, playingField[1 + index]?.name ?? ocean, playingField[2 + index]?.name ?? ocean, playingField[3 + index]?.name ?? ocean)
-//                print()
-//            }
             return super.move(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: [index], playingField: &playingField) //перемещаем косатку на место пингвина
         } else {
-            //Пингвин не найден, пытаемся сделать обычноее перемещение
+            //Пингвин не найден, косатка пытается сделать обычноее перемещение
             hunger += 1
             return super.move(seaCreaturesIndex: seaCreaturesIndex, indexCellsAround: indexCellsAround, playingField: &playingField)
         }
     }
 
     private func toDie(seaCreaturesIndex: Int,  playingField: inout [SeaCreature?]) {
-        if hunger == Constants().hungerKillerWhale {
+        if hunger == Constants().hungerOrca {
             playingField[seaCreaturesIndex] = nil
-            print("\(name) index = \(seaCreaturesIndex) dead")
         }
     }
 }

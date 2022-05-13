@@ -29,11 +29,9 @@ class SeaCreature {
             if playingField[index] == nil {
                 playingField[index] = playingField[seaCreaturesIndex]
                 playingField[seaCreaturesIndex] = nil
-                print("\(name) index = \(seaCreaturesIndex) move to index = \(index)")
                 return index
             }
         }
-        print("\(name) index = \(seaCreaturesIndex) dont move")
         return seaCreaturesIndex
     }
 
@@ -51,7 +49,6 @@ class SeaCreature {
         //Создание нового морского обитателя если есть свободная ячейка
         if let index = indexEmptyCellsAround.randomElement() {
             playingField[index] = newSeaCreature
-            print("The birth of \(name), index = \(index)")
         }
     }
 

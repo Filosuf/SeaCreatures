@@ -14,19 +14,16 @@ final class SeaCreaturesGame {
     lazy var sizeOfThePlayingField = heightOfThePlayingField * widthOfThePlayingField
 
     let percentageOfPenguins = Constants().percentageOfPenguins
-    let percentageOfKillerWhale = Constants().percentageOfKillerWhale
+    let percentageOfOrca = Constants().percentageOfOrca
 
     var numberOfPenguins: Int {
         heightOfThePlayingField * widthOfThePlayingField * percentageOfPenguins / 100
     }
-    var numberOfKillerWhale: Int {
-        heightOfThePlayingField * widthOfThePlayingField * percentageOfKillerWhale / 100
+    var numberOfOrca: Int {
+        heightOfThePlayingField * widthOfThePlayingField * percentageOfOrca / 100
     }
 
     var seaCreaturesArray = [SeaCreature?]()
-
-    let penguin = Penguin()
-    let killerWhale = KillerWhale()
 
 //    var indexOneStep = 0
 //    var indexOneStepFull = 0
@@ -49,17 +46,17 @@ final class SeaCreaturesGame {
                 seaCreaturesArray[index] = Penguin()
             }
         }
-        //Растановка касаток
-        for _ in 0..<numberOfKillerWhale {
+        //Расстановка косаток
+        for _ in 0..<numberOfOrca {
             if let index = playingFieldArray.randomElement() {
                 playingFieldArray.removeAll(where: {$0 == index})
-                seaCreaturesArray[index] = KillerWhale()
+                seaCreaturesArray[index] = Orca()
             }
         }
     }
 
     func makeOneMove() {
-//        масив координат ячеек уже сходивших на этом ходу
+        //масив координат ячеек уже сходивших на этом ходу
         var busyCellsArray = [Int]()
 
         for (index, seaCreature) in seaCreaturesArray.enumerated() {
@@ -110,7 +107,7 @@ final class SeaCreaturesGame {
     }
 
     private func appendElement(center: Int, index: Int, array: inout [Int]) {
-        //Проверка, что добавляемы индекс находится в пределах таблицы (ограничение для первой и последней строки)
+        //Проверка, что добавляемый индекс находится в пределах таблицы (ограничение для первой и последней строки)
         if index >= 0 && index < sizeOfThePlayingField {
             //ограничение для первого столбца
             if center % widthOfThePlayingField == 0 {

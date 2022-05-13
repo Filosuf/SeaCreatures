@@ -33,7 +33,7 @@ class SeaCreaturesCollectionViewCell: UICollectionViewCell {
     func setupCell(seaCreature: SeaCreature?) {
         if let _ = seaCreature as? Penguin {
             iconImage.image = UIImage(named: "pinguin")
-        } else if let _ = seaCreature as? KillerWhale {
+        } else if let _ = seaCreature as? Orca {
             iconImage.image = UIImage(named: "orca")
         } else {
             iconImage.image = UIImage(named: "sea")
