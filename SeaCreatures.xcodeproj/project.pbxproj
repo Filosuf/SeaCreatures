@@ -17,6 +17,10 @@
 		7C744E22282BC9D1005FD2A9 /* SeaCreaturesGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E21282BC9D1005FD2A9 /* SeaCreaturesGame.swift */; };
 		7C744E24282BD04D005FD2A9 /* SeaCreaturesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */; };
 		7C744E26282D1B59005FD2A9 /* SeaCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E25282D1B58005FD2A9 /* SeaCreature.swift */; };
+		7C744E28282D4E52005FD2A9 /* SeaCreaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E27282D4E52005FD2A9 /* SeaCreaturesView.swift */; };
+		7C744E2A282D4FB1005FD2A9 /* Conctants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E29282D4FB1005FD2A9 /* Conctants.swift */; };
+		7C744E2C282D5562005FD2A9 /* SeaCreaturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E2B282D5562005FD2A9 /* SeaCreaturesCollectionViewCell.swift */; };
+		7C744E2E282D5601005FD2A9 /* UIVew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C744E2D282D5601005FD2A9 /* UIVew+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		7C744E21282BC9D1005FD2A9 /* SeaCreaturesGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesGame.swift; sourceTree = "<group>"; };
 		7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesProtocol.swift; sourceTree = "<group>"; };
 		7C744E25282D1B58005FD2A9 /* SeaCreature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreature.swift; sourceTree = "<group>"; };
+		7C744E27282D4E52005FD2A9 /* SeaCreaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesView.swift; sourceTree = "<group>"; };
+		7C744E29282D4FB1005FD2A9 /* Conctants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conctants.swift; sourceTree = "<group>"; };
+		7C744E2B282D5562005FD2A9 /* SeaCreaturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreaturesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C744E2D282D5601005FD2A9 /* UIVew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVew+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +73,15 @@
 			isa = PBXGroup;
 			children = (
 				7C744E17282BB708005FD2A9 /* SeaCreaturesViewController.swift */,
+				7C744E2D282D5601005FD2A9 /* UIVew+Extension.swift */,
+				7C744E2B282D5562005FD2A9 /* SeaCreaturesCollectionViewCell.swift */,
 				7C744E21282BC9D1005FD2A9 /* SeaCreaturesGame.swift */,
 				7C744E23282BD04D005FD2A9 /* SeaCreaturesProtocol.swift */,
 				7C744E1D282BBE7A005FD2A9 /* Penguin.swift */,
 				7C744E1F282BBEBE005FD2A9 /* KillerWhale.swift */,
 				7C744E25282D1B58005FD2A9 /* SeaCreature.swift */,
+				7C744E27282D4E52005FD2A9 /* SeaCreaturesView.swift */,
+				7C744E29282D4FB1005FD2A9 /* Conctants.swift */,
 				7C744E19282BB755005FD2A9 /* Application */,
 				7C744E1A282BB793005FD2A9 /* Resources */,
 			);
@@ -168,10 +180,14 @@
 				7C744E22282BC9D1005FD2A9 /* SeaCreaturesGame.swift in Sources */,
 				7C744E04282BB6C9005FD2A9 /* AppDelegate.swift in Sources */,
 				7C744E1E282BBE7A005FD2A9 /* Penguin.swift in Sources */,
+				7C744E2A282D4FB1005FD2A9 /* Conctants.swift in Sources */,
 				7C744E26282D1B59005FD2A9 /* SeaCreature.swift in Sources */,
 				7C744E18282BB708005FD2A9 /* SeaCreaturesViewController.swift in Sources */,
 				7C744E20282BBEBE005FD2A9 /* KillerWhale.swift in Sources */,
 				7C744E24282BD04D005FD2A9 /* SeaCreaturesProtocol.swift in Sources */,
+				7C744E2E282D5601005FD2A9 /* UIVew+Extension.swift in Sources */,
+				7C744E28282D4E52005FD2A9 /* SeaCreaturesView.swift in Sources */,
+				7C744E2C282D5562005FD2A9 /* SeaCreaturesCollectionViewCell.swift in Sources */,
 				7C744E06282BB6C9005FD2A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

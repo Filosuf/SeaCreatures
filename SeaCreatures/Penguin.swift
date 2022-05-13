@@ -9,7 +9,7 @@ import Foundation
 
 final class Penguin: SeaCreature {
 
-    override init(name: String = " Penguin", periodOfBirths: Int = 3, age: Int = 0) {
+    override init(name: String = Constants().namePenguin, periodOfBirths: Int = Constants().periodOfBirthsPenguin, age: Int = 0) {
         super.init(name: name, periodOfBirths: periodOfBirths, age: 0)
     }
 

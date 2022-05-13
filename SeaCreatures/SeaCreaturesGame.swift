@@ -9,18 +9,18 @@ import Foundation
 
 final class SeaCreaturesGame {
 
-    let heightOfThePlayingField = 4 //15 Minimum: 3
-    let widthOfThePlayingField = 4 //10  Minimum: 3
+    let heightOfThePlayingField = Constants().heightOfThePlayingField
+    let widthOfThePlayingField = Constants().widthOfThePlayingField
     lazy var sizeOfThePlayingField = heightOfThePlayingField * widthOfThePlayingField
 
-    let percentageOfPenguins = 10
-    let percentageOfKillerWhale = 10 //5
+    let percentageOfPenguins = Constants().percentageOfPenguins
+    let percentageOfKillerWhale = Constants().percentageOfKillerWhale
 
     var numberOfPenguins: Int {
-        heightOfThePlayingField * heightOfThePlayingField * percentageOfPenguins / 100
+        heightOfThePlayingField * widthOfThePlayingField * percentageOfPenguins / 100
     }
     var numberOfKillerWhale: Int {
-        heightOfThePlayingField * heightOfThePlayingField * percentageOfKillerWhale / 100
+        heightOfThePlayingField * widthOfThePlayingField * percentageOfKillerWhale / 100
     }
 
     var seaCreaturesArray = [SeaCreature?]()
@@ -28,8 +28,11 @@ final class SeaCreaturesGame {
     let penguin = Penguin()
     let killerWhale = KillerWhale()
 
-//    seaCreaturesArray = [penguin, killerWhale]
-
+//    var indexOneStep = 0
+//    var indexOneStepFull = 0
+//    var seaCreatureMemory: SeaCreature?
+    //масив координат ячеек уже сходивших на этом ходу
+    var busyCellsArray = [Int]()
 
     func startGame() {
         //Создание массива с индесами игрового поля
@@ -55,7 +58,7 @@ final class SeaCreaturesGame {
     }
 
     func makeOneMove() {
-        //масив координат ячеек уже сходивших на этом ходу
+//        масив координат ячеек уже сходивших на этом ходу
         var busyCellsArray = [Int]()
 
         for (index, seaCreature) in seaCreaturesArray.enumerated() {
@@ -67,7 +70,24 @@ final class SeaCreaturesGame {
                 }
             }
         }
-
+        //feature. move one SeaCreature
+//        repeat {
+//            seaCreatureMemory = seaCreaturesArray[indexOneStep]
+//            if let seaCreature = seaCreaturesArray[indexOneStep] {
+//                if busyCellsArray.firstIndex(of: indexOneStep) == nil {
+//                    let newIndex = seaCreature.move(seaCreaturesIndex: indexOneStep, indexCellsAround: creatingIndexCellsAround(index: indexOneStep), playingField: &seaCreaturesArray)
+//                    print("Исключающий индекс\(newIndex)")
+//                    busyCellsArray.append(newIndex)
+//                    seaCreature.growth(seaCreaturesIndex: newIndex, indexCellsAround: creatingIndexCellsAround(index: newIndex), playingField: &seaCreaturesArray)
+//                }
+//            }
+//            print("repeat \(indexOneStep); \(seaCreatureMemory?.name ?? "sea")")
+//            if indexOneStep == sizeOfThePlayingField {
+//                busyCellsArray[0...busyCellsArray.count-1] = []
+//            }
+//            indexOneStepFull += 1
+//            indexOneStep = indexOneStepFull % sizeOfThePlayingField
+//        } while seaCreatureMemory == nil
     }
 
     //Создание массива с индексами ячеек окружаемые искомую ячейку
