@@ -24,8 +24,9 @@ class SeaCreaturesView: UIView {
 
         let button = UIButton()
         button.setTitle("New game", for: .normal)
-        button.setTitleColor(.red, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemGray4
+        button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -51,8 +52,9 @@ class SeaCreaturesView: UIView {
             collectionView.bottomAnchor.constraint(equalTo: newGameButton.topAnchor, constant: -16),
 
             newGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            newGameButton.heightAnchor.constraint(equalToConstant: 40),
-            newGameButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30)
+            newGameButton.heightAnchor.constraint(equalToConstant: 50),
+            newGameButton.widthAnchor.constraint(equalToConstant: 150),
+            newGameButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ])
     }
 }
